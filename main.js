@@ -88,30 +88,57 @@ const isCretaceous = function(dinosaur) {
 }
 
 const singularizeDinos = function(dinos) {
+  const newArr = [];
+  dinos.forEach(dinos => newArr.push(makeSingular(dinos)));
+  return newArr;
 }
 
 const truncateDinos = function(dinos) {
+  const newArr = [];
+  dinos.forEach(dinos => newArr.push(truncateSpecies(dinos)));
+  return newArr;
 }
 
 const makeAllExtinct = function(dinos) {
+  const newArr = [];
+  dinos.forEach(dinos => newArr.push(makeExtinct(dinos)));
+  return newArr;
 }
 
 const carnivoresOnly = function(dinos) {
+  const newArr = [];
+  dinos.forEach(dinos => isCarnivore(dinos) ? newArr.push(dinos) : '');
+  return newArr;
 }
 
 const herbivoresOnly = function(dinos) {
+  const newArr = [];
+  dinos.forEach(dinos => isCarnivore(dinos) ? '' : newArr.push(dinos));
+  return newArr;
 }
 
 const extinctOnly = function(dinos) {
+  const newArr = [];
+  dinos.forEach(dinos => isExtinct(dinos) ? newArr.push(dinos) : '');
+  return newArr;
 }
 
 const notExtinct = function(dinos) {
+  const newArr = [];
+  dinos.forEach(dinos => isExtinct(dinos) ? '' : newArr.push(dinos));
+  return newArr;
 }
 
 const triassicOnly = function(dinos) {
+  const newArr = [];
+  dinos.forEach(dinos => isTriassic(dinos) ? newArr.push(dinos) : '');
+  return newArr;
 }
 
 const notTriassic = function(dinos) {
+  const newArr = [];
+  dinos.forEach(dinos => isTriassic(dinos) ? '' : newArr.push(dinos));
+  return newArr;
 }
 
 
